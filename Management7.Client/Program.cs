@@ -3,9 +3,20 @@ namespace Management7.Client
 {
     internal class Program
     {
-        public static StudentService newStudent = new StudentService();
+        public StudentService newStudent { get; set; }
+        public Program()
+        {
+            this.newStudent = new StudentService();
+        }
+        
         public const string password = "1111";
         static void Main(string[] args)
+        {
+            var program = new Program();
+            program.Run();
+        }
+
+        public void Run()
         {
             Console.WriteLine("\n Assalomu alaykum xurmatli o'qituvchi!");
 
@@ -34,7 +45,7 @@ namespace Management7.Client
             }
         }
 
-        static void SalomBer()
+         public void SalomBer()
         {
             Console.WriteLine("\n Xush kelibsiz, Elbek!");
 
@@ -43,7 +54,7 @@ namespace Management7.Client
             {
                 savol = true;
                 Console.WriteLine("\n Quyidagi menyudan birini tanlang: \n");
-                Console.WriteLine(" 1) Yangi talaba qoshish");
+                Console.WriteLine(" 1) Yangi talaba qo'shish");
                 Console.WriteLine(" 2) Talabalar ro'yxati");
                 Console.WriteLine(" 3) Qabullar soni\n");
                 Console.Write(" Kerakli bo'limni raqamini kiriting: ");
@@ -79,7 +90,7 @@ namespace Management7.Client
             }
             
         }
-        static void TalabaQoshish()
+         public void TalabaQoshish()
         {
             Console.Write(" Talaba ismi: ");
             string ism = Console.ReadLine();
@@ -90,7 +101,7 @@ namespace Management7.Client
             Console.WriteLine("\n Talaba muvofaqiyatli qo'shildi! ");
         }
 
-        static bool QaytaIshgaTushir()
+         public bool QaytaIshgaTushir()
         {
             Console.Write("\n Davom etishni xohlaysizmi? (yes/no):");
             return Console.ReadLine().ToLower() == "yes";

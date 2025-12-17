@@ -34,7 +34,7 @@ namespace Management7.Application.Service
             for (int i=0; i<this.DbContext.studentCount; i++)
             {
                 var s = this.DbContext.students[i];
-                Console.WriteLine($"  {s.Id}:  {s.FirstName} {s.LastName}");
+                Console.WriteLine($" Id: {s.Id}:  Full Name: {s.FirstName} {s.LastName}");
             }
         }
         public int GetStudentCount()
