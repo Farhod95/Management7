@@ -49,6 +49,6 @@ namespace Management7.Application.Service
             int uchinchiSon = new Random().Next(1000, 10000);
             string randomSon= $"{birinchiRaqam}{ikkinchiRaqam}{uchinchiSon}";
             return randomSon;
-        }
+        }        
     }
 }
