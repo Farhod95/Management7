@@ -1,5 +1,4 @@
 ﻿using Management7.Application.Service;
-using System.Reflection.Metadata;
 namespace Management7.Client
 {
     internal class Program
@@ -22,7 +21,14 @@ namespace Management7.Client
                 else
                 {
                     Console.WriteLine(" Parol xato, qayta urinib ko'ring! \n");
-                    Console.WriteLine($" Sizda {3 - passwordCounter} ta urinish qoldi.");
+                    if (passwordCounter == 3)
+                    {
+                        Console.WriteLine(" Uch marta xato parol kiritildi, tizimdan chiqilyapti...");
+                    }
+                    else
+                    {
+                        Console.WriteLine($" Sizda {3 - passwordCounter} ta urinish qoldi.");
+                    }
                     passwordCounter++;
                 }
             }
