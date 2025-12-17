@@ -15,7 +15,7 @@ namespace Management7.Application.Service
         {
             var newStudent = new Student
             {
-                Id = new Random().Next(1000, 9999).ToString(),
+                Id = RandomSon(),
                 FirstName = firstName,
                 LastName = lastName
             };
@@ -40,6 +40,15 @@ namespace Management7.Application.Service
         public int GetStudentCount()
         {
             return this.DbContext.studentCount;
+        }
+
+        public string RandomSon()
+        {
+            char birinchiRaqam = (char)new Random().Next('A', 'Z');
+            char ikkinchiRaqam = (char)new Random().Next('A', 'Z');
+            int uchinchiSon = new Random().Next(1000, 10000);
+            string randomSon= $"{birinchiRaqam}{ikkinchiRaqam}{uchinchiSon}";
+            return randomSon;
         }
     }
 }
